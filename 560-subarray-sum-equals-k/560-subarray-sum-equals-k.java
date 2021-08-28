@@ -1,48 +1,48 @@
 class Solution {
     // Brute Force O(N^3) and space complexity O(1)
-//     public int subarraySum(int[] nums, int k) {
-//         int count = 0;
+    public int subarraySum(int[] nums, int k) {
+        int count = 0;
         
-//         // start will go till nums.lenght - 1
-//         for(int start = 0; start < nums.length; start++) {
-//             // end will go till nums.lenght
-//             for(int end = start + 1; end <= nums.length; end++) {
-//                 int sum = 0;
-//                 // sum all the elements from start to end-1
-//                 for(int i = start ; i < end; i++) {
-//                     sum += nums[i];
-//                 }
-//                 if(sum == k)
-//                     count++;
-//             }
-//         }
+        // start will go till nums.lenght - 1
+        for(int start = 0; start < nums.length; start++) {
+            // end will go till nums.lenght
+            for(int end = start + 1; end <= nums.length; end++) {
+                int sum = 0;
+                // sum all the elements from start to end-1
+                for(int i = start ; i < end; i++) {
+                    sum += nums[i];
+                }
+                if(sum == k)
+                    count++;
+            }
+        }
         
-//         return count;
-//     }
+        return count;
+    }
 
 //--------------------------------Optimization to O(N^2)------------------------------------------------//
     
     // Cumulative sum approach Time Complexity O(N^2) and Space COmplexity O(1)
-//     public int subarraySum(int[] nums, int k) {
-//         int count = 0;
+    public int subarraySum(int[] nums, int k) {
+        int count = 0;
         
-//         // start will go till nums.lenght - 1
-//         for(int start = 0; start < nums.length; start++) {
-//             int sum = 0;
-//             // end will go till nums.lenght - 1
-//             for(int end = start; end < nums.length; end++) {
-//                 sum += nums[end];
-//                 if(sum == k)
-//                     count++;
-//             }
-//         }
+        // start will go till nums.lenght - 1
+        for(int start = 0; start < nums.length; start++) {
+            int sum = 0;
+            // end will go till nums.lenght - 1
+            for(int end = start; end < nums.length; end++) {
+                sum += nums[end];
+                if(sum == k)
+                    count++;
+            }
+        }
         
-//         return count;
-//     }
+        return count;
+    }
 
 //--------------------------------Optimization to O(N)------------------------------------------------//
     
-    // One pass approach Time Complexity O(N2) and Space COmplexity O(N) used HashMAp
+    // One pass approach Time Complexity O(N) and Space COmplexity O(N) used HashMAp
     public int subarraySum(int[] nums, int k) {
         int count = 0, sum = 0;
         
