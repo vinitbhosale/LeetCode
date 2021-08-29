@@ -1,10 +1,10 @@
 class Solution {
     // Time Complexity O(NlogN) Space Complexity O(1)
-    // public int findKthLargest(int[] nums, int k) {
-    //     final int N = nums.length;
-    //     Arrays.sort(nums);
-    //     return nums[N - k];
-    // }
+    public int findKthLargest(int[] nums, int k) {
+        final int N = nums.length;
+        Arrays.sort(nums);
+        return nums[N - k];
+    }
     
  //-----------------------------Optimize----------------------------------------------//  
     
