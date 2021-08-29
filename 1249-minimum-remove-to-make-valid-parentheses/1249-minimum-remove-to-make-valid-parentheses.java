@@ -1,6 +1,5 @@
 class Solution {
    // Using STACK Time Complexity O(N) and Space Complexity O(N)
-    /*
     public String minRemoveToMakeValid(String s) {
         Stack<Integer> stack = new Stack<>();
         Set<Integer> indexToBeRemove = new HashSet<>();
@@ -26,7 +25,7 @@ class Solution {
         
         return result.toString();
     }
-    */
+    
 //--------------------------------------------------------------------------------------------------------------------------//
     
     // Using two StringBuilder Time Complexity O(N) and Space Complexity O(N)
