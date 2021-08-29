@@ -1,17 +1,17 @@
 class Solution {
       // Brute Force Time Complexity O(N^2) and Space Complexity O(1)
-//     public int maxSubArray(int[] nums) {
-//         int maxSubarray = Integer.MIN_VALUE;
-//         for (int i = 0; i < nums.length; i++) {
-//             int currentSubarray = 0;
-//             for (int j = i; j < nums.length; j++) {
-//                 currentSubarray += nums[j];
-//                 maxSubarray = Math.max(maxSubarray, currentSubarray);
-//             }
-//         }
+    public int maxSubArray(int[] nums) {
+        int maxSubarray = Integer.MIN_VALUE;
+        for (int i = 0; i < nums.length; i++) {
+            int currentSubarray = 0;
+            for (int j = i; j < nums.length; j++) {
+                currentSubarray += nums[j];
+                maxSubarray = Math.max(maxSubarray, currentSubarray);
+            }
+        }
         
-//         return maxSubarray;
-//     }
+        return maxSubarray;
+    }
     
 //------------------------------Optimize----------------------------------------//
     
