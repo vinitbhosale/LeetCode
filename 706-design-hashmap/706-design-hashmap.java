@@ -27,12 +27,14 @@ class MyHashMap {
        
         LinkedList<Entry> bucket = entries[index];
         
-        for(Entry entry : bucket){
-            if(entry.key == key){
-                entry.value = value;
-                return;
+        if(!bucket.isEmpty()){
+            for(Entry entry : bucket){
+                if(entry.key == key){
+                    entry.value = value;
+                    return;
+                }
             }
-        }
+        } 
         bucket.addLast(new Entry(key, value));
     } 
     
