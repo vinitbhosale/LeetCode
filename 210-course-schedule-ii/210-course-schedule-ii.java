@@ -1,46 +1,47 @@
 class Solution {
     // DFS Time Complexity O(V + E)
-//     public int[] findOrder(int numCourses, int[][] prerequisites) {
-//         List<List<Integer>> graph = new ArrayList<>();
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        List<List<Integer>> graph = new ArrayList<>();
         
-//         for(int i = 0; i < numCourses; i++)
-//             graph.add(new ArrayList<Integer>());
+        for(int i = 0; i < numCourses; i++)
+            graph.add(new ArrayList<Integer>());
         
-//         for(int[] pre : prerequisites)
-//             graph.get(pre[1]).add(pre[0]);
+        for(int[] pre : prerequisites)
+            graph.get(pre[1]).add(pre[0]);
         
-//         int[] result = new int[numCourses];
-//         int[] visited = new int[numCourses];
-//         Stack<Integer> stack = new Stack<>();
+        int[] result = new int[numCourses];
+        int[] visited = new int[numCourses];
+        Stack<Integer> stack = new Stack<>();
         
-//         for(int i = 0; i < numCourses; i++){
-//             if(visited[i] == 0 && dfs(graph, visited, stack, i)) return new int[0];
-//         }
+        for(int i = 0; i < numCourses; i++){
+            if(visited[i] == 0 && dfs(graph, visited, stack, i)) return new int[0];
+        }
         
-//          for(int i = 0; i < numCourses; i++)
-//             result[i] = stack.pop();
+         for(int i = 0; i < numCourses; i++)
+            result[i] = stack.pop();
         
-//         return result;
-//     }
+        return result;
+    }
     
-//     private boolean dfs(List<List<Integer>> graph, int[] visited, Stack<Integer> stack, int v){
-//         visited[v] = 1;
+    private boolean dfs(List<List<Integer>> graph, int[] visited, Stack<Integer> stack, int v){
+        visited[v] = 1;
         
-//         List<Integer> adj = graph.get(v);
+        List<Integer> adj = graph.get(v);
         
-//         for(int i = 0; i < adj.size(); i++){
-//             int eligibleCourse = adj.get(i);
-            // Course is already visited
-//             if(visited[eligibleCourse] == 1) return true;
+        for(int i = 0; i < adj.size(); i++){
+            int eligibleCourse = adj.get(i);
+            //Course is already visited
+            if(visited[eligibleCourse] == 1) return true;
             
-//             if(visited[eligibleCourse] == 0 && dfs(graph, visited, stack, eligibleCourse))
-//                 return true;
-//         }
-//         stack.push(v);
-//         visited[v] = 2;
-//         return false;
-//     }
-    //----------------------------------------------------------------------------------//
+            if(visited[eligibleCourse] == 0 && dfs(graph, visited, stack, eligibleCourse))
+                return true;
+        }
+        stack.push(v);
+        visited[v] = 2;
+        return false;
+    }
+//---------------------------------------------------------------------------------------------------------------------------//
+    
     // BFS topological sort
      public int[] findOrder(int numCourses, int[][] prerequisites) {
          List<List<Integer>> graph = new ArrayList<>();
