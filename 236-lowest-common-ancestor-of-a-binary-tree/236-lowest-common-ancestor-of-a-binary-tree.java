@@ -9,7 +9,7 @@
  */
 class Solution {
     // DFS Time O(N) Space O(N)
-    /**
+    
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         
         return dfs(root, p , q);
@@ -28,7 +28,7 @@ class Solution {
         else
             return left != null ? left : right;
     }
-    */
+    
 
 //---------------------------------------------------------------------------------------------------------------//
     
