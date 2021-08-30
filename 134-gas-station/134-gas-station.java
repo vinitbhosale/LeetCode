@@ -1,38 +1,38 @@
 class Solution {
     // Brute Force Time Complexity O(N^2) and Space COmplexity O(1)
-//     public int canCompleteCircuit(int[] gas, int[] cost) {
-//         int n = gas.length; // #station
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+        int n = gas.length; // #station
         
-//         // for each station i (starting point)
-//         for (int i = 0; i < n; ++i) { 
-//             // refuel at starting point
-//             int gallon = gas[i]; 
-//             // isAmple: is it a valid starting point
-//             boolean isAmple = true; 
+        // for each station i (starting point)
+        for (int i = 0; i < n; ++i) { 
+            // refuel at starting point
+            int gallon = gas[i]; 
+            // isAmple: is it a valid starting point
+            boolean isAmple = true; 
             
-//             // we need to check n stations
-//             // note: nextStation is the one we need to check
-//             //       currStation is denoted because the cost information is in it
-//             for (int j = 0; j < n; ++j) {
+            // we need to check n stations
+            // note: nextStation is the one we need to check
+            //       currStation is denoted because the cost information is in it
+            for (int j = 0; j < n; ++j) {
                 
-//                 int currStation = (i + j) % n;
+                int currStation = (i + j) % n;
                 
-//                 int nextStation = (currStation + 1) % n;
+                int nextStation = (currStation + 1) % n;
                 
-//                 gallon -= cost[currStation];
+                gallon -= cost[currStation];
                 
-//                 // not reachable from currStation to nextStation
-//                 if (gallon < 0) { 
-//                     isAmple = false;
-//                     break;
-//               }
-//                 // refuel in nextStation
-//                 gallon += gas[nextStation]; 
-//             }   
-//             if (isAmple) return i;
-//         }
-//         return -1;
-//     }
+                // not reachable from currStation to nextStation
+                if (gallon < 0) { 
+                    isAmple = false;
+                    break;
+              }
+                // refuel in nextStation
+                gallon += gas[nextStation]; 
+            }   
+            if (isAmple) return i;
+        }
+        return -1;
+    }
   
     
 //------------------------------------------Optimize-------------------------------------------------------------// 
