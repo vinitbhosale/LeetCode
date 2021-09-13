@@ -1,45 +1,47 @@
 class Solution {
     //dfs 
-//     public boolean canFinish(int numCourses, int[][] prerequisites) {
-//         if(prerequisites.length == 0)return true;
+    // Time Complexity O(E + V) and Space Complexity O(E + V)
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        if(prerequisites.length == 0)return true;
         
-//         List<List<Integer>> graph = new ArrayList<>();
+        List<List<Integer>> graph = new ArrayList<>();
         
-//         for(int i = 0; i < numCourses; i++)
-//             graph.add(new ArrayList<Integer>());
+        for(int i = 0; i < numCourses; i++)
+            graph.add(new ArrayList<Integer>());
         
-//         for(int[] pre : prerequisites)
-//             graph.get(pre[1]).add(pre[0]);
+        for(int[] pre : prerequisites)
+            graph.get(pre[1]).add(pre[0]);
         
-//         int[] visited = new int[numCourses];
+        int[] visited = new int[numCourses];
         
-//         for(int i = 0; i < numCourses; i++)
-//             if(!dfs(graph, visited, i)) return false;
+        for(int i = 0; i < numCourses; i++)
+            if(!dfs(graph, visited, i)) return false;
         
-//         return true;
-//     }
+        return true;
+    }
     
-//     private boolean dfs(List<List<Integer>> graph, int[] visited, int v){
-//         visited[v] = 1;
+    private boolean dfs(List<List<Integer>> graph, int[] visited, int v){
+        visited[v] = 1;
         
-//         List<Integer> adj = graph.get(v);
+        List<Integer> adj = graph.get(v);
         
-//         for(int i = 0; i < adj.size(); i++){
-//             int eligibleCourse = adj.get(i);
-//             if(visited[eligibleCourse] == 1) return false;
+        for(int i = 0; i < adj.size(); i++){
+            int eligibleCourse = adj.get(i);
+            if(visited[eligibleCourse] == 1) return false;
             
-//             if(visited[eligibleCourse] == 0)
-//                 if(!dfs(graph, visited, eligibleCourse)) return false;
-//         }
+            if(visited[eligibleCourse] == 0)
+                if(!dfs(graph, visited, eligibleCourse)) return false;
+        }
         
-//         visited[v] = 2;
+        visited[v] = 2;
         
-//         return true;
-//     }
+        return true;
+    }
     
 //------------------------------------------------------------------------------------------//   
     
-    // BFS 
+    // BFS
+    // Time Complexity O(E + V) and Space Complexity O(E + V)
     public boolean canFinish(int numCourses, int[][] prerequisites){
         List<List<Integer>> graph = new ArrayList<>();
         for(int i = 0; i < numCourses; i++)
