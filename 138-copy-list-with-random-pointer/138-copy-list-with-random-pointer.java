@@ -16,35 +16,35 @@ class Node {
 class Solution {
     // Time Complexity O(N) and Space Complexity O(N)
     
-//     public Node copyRandomList(Node head) {
-//         if(head == null) return null;
+    public Node copyRandomList(Node head) {
+        if(head == null) return null;
         
-//         Map<Node, Node> visited = new HashMap<>();
+        Map<Node, Node> visited = new HashMap<>();
         
-//         // create reference for original list
-//         Node current = head;
-//         // create refernce for new list;
-//         Node newNode = new Node(-1);
-//         Node copy = newNode;
+        // create reference for original list
+        Node current = head;
+        // create refernce for new list;
+        Node newNode = new Node(-1);
+        Node copy = newNode;
         
-//         while(current != null){
-//             copy.next = new Node(current.val);
-//             copy = copy.next;
-//             visited.put(current, copy);
-//             current = current.next;            
-//         }
+        while(current != null){
+            copy.next = new Node(current.val);
+            copy = copy.next;
+            visited.put(current, copy);
+            current = current.next;            
+        }
         
-//         current = head;
-//         copy = newNode.next;
+        current = head;
+        copy = newNode.next;
         
-//         while(current != null){
-//             copy.random = visited.get(current.random);
-//             copy = copy.next;
-//             current = current.next;
-//         }
+        while(current != null){
+            copy.random = visited.get(current.random);
+            copy = copy.next;
+            current = current.next;
+        }
         
-//         return newNode.next;
-//     }
+        return newNode.next;
+    }
     
 //------------------------------------OPTIMIZE--------------------------------------//
     
