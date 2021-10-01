@@ -15,7 +15,6 @@
  */
 class Solution {
     // BFS Time Complexity O(N) and Space Complexity O(D) D: diameter of tree
-    /*
     public List<Integer> rightSideView(TreeNode root) {
         
         List<Integer> res = new LinkedList<Integer>();
@@ -38,7 +37,7 @@ class Solution {
         
         return res;
         
-    }*/
+    }
 //-----------------------------------------------------------------------------------//
     // DFS
     // Time Complexity O(N) and Space Complexity O(H)
