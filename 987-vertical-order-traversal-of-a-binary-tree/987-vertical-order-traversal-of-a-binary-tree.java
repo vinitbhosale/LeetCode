@@ -15,7 +15,7 @@
  */
 
 // DFS
-/**
+
 class Solution {
     private  Map<Integer, ArrayList<Pair<Integer, Integer>>> col_table;
     int minCol, maxCol;
@@ -69,8 +69,7 @@ class Solution {
         dfs(node.right, row + 1, col + 1);
     }
 }
-*/
-
+//-----------------------------------------------------------------------------------------------------//
 // BFS
 class Solution { 
 
