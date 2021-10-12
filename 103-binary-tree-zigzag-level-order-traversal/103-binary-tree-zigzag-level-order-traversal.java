@@ -54,7 +54,7 @@ class Solution {
     
 //---------------------------------------------------------------------------------------//
 // DFS Time Complexity O(N) and Space Complexity O(log N)
-    /*
+    
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         
@@ -84,5 +84,4 @@ class Solution {
             dfs(root.right, level + 1, result);
         
     }
-    */
 }
