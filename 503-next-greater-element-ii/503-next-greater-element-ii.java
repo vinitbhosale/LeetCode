@@ -1,6 +1,5 @@
 class Solution {
     // Brute Force O(N^2) Space O(N)
-    /**
     public int[] nextGreaterElements(int[] nums) {
         int[] result = new int[nums.length];
         
@@ -16,7 +15,7 @@ class Solution {
         }
         
         return result;
-    }*/
+    }
 //--------------------------------Optimize Solutuion-----------------------------------------------//
     
     // Time Complexity  O(N) Space Complexity O(N)
